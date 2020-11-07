@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:tns="http://bpmn.io/schema/bpmn" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:yaoqiang="http://bpmn.sourceforge.net" id="Definitions_0fr9mxs" name="" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.1.0" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://bpmn.sourceforge.net/schemas/BPMN20.xsd">
+  <bpmn:process id="zaizi-challenge" name="Zaizi Challenge" processType="None" isClosed="false" isExecutable="true">
+    <bpmn:startEvent id="Event_01ulys0" name="New Entry">
+      <bpmn:outgoing>Flow_0wruhap</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0wruhap" sourceRef="Event_01ulys0" targetRef="score_entry" />
+    <bpmn:endEvent id="Event_113i8o0" name="Entry Processed">
+      <bpmn:incoming>Flow_062x6bt</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="score_entry" name="Receive Score for Entry">
+      <bpmn:extensionElements>
+        <camunda:executionListener class="com.zaizi.challenge.ScoreEntryDelegate" event="end" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0wruhap</bpmn:incoming>
+      <bpmn:outgoing>Flow_062x6bt</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_062x6bt" sourceRef="score_entry" targetRef="Event_113i8o0" />
+  </bpmn:process>
+  <bpmn:message id="Message_1xsg9l4" name="Message_2ii5m0u" />
+  <bpmndi:BPMNDiagram id="casa-challenge-process" name="Untitled Diagram" resolution="96">
+    <bpmndi:BPMNPlane bpmnElement="zaizi-challenge">
+      <bpmndi:BPMNEdge id="Flow_062x6bt_di" bpmnElement="Flow_062x6bt">
+        <di:waypoint x="450" y="160" />
+        <di:waypoint x="722" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wruhap_di" bpmnElement="Flow_0wruhap">
+        <di:waypoint x="158" y="160" />
+        <di:waypoint x="350" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_01ulys0_di" bpmnElement="Event_01ulys0">
+        <dc:Bounds x="122" y="142" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="115" y="185" width="51" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_113i8o0_di" bpmnElement="Event_113i8o0">
+        <dc:Bounds x="722" y="142" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="700" y="185" width="81" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1b0wbv4_di" bpmnElement="score_entry">
+        <dc:Bounds x="350" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
