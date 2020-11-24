@@ -122,7 +122,6 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.latencyutils:LatencyUtils:2.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:3.4.5" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.2.7.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.geteventstore:eventstore-client_2.12:7.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.12.9" level="project" />
@@ -142,5 +141,7 @@
     <orderEntry type="library" name="Maven: com.typesafe.akka:akka-http-core_2.12:10.1.9" level="project" />
     <orderEntry type="library" name="Maven: com.typesafe.akka:akka-parsing_2.12:10.1.9" level="project" />
     <orderEntry type="library" name="Maven: com.typesafe.akka:akka-http-spray-json_2.12:10.1.9" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-jdk14:1.7.30" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
   </component>
 </module>
